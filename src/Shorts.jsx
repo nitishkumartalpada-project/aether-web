@@ -24,6 +24,7 @@ const ShortVideo = ({ media }) => {
 
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showComments, setShowComments] = useState(false);
+	const [isExpanded, setIsExpanded] = useState(false);
 
 	// HLS Quality States
 	const [quality, setQuality] = useState("Auto");
@@ -314,14 +315,24 @@ const ShortVideo = ({ media }) => {
 						>
 							{media.title}
 						</h2>
-						{/* FIX A: Added className="shorts-description" here */}
+
 						<p
 							className="shorts-description"
+							onClick={(e) => {
+								e.stopPropagation();
+								setIsExpanded(!isExpanded);
+							}}
 							style={{
 								margin: "0 0 12px 0",
 								fontSize: "0.9rem",
 								color: "#ddd",
 								textShadow: "0 1px 3px rgba(0,0,0,0.8)",
+								cursor: "pointer",
+								display: "-webkit-box",
+								WebkitLineClamp: isExpanded ? "unset" : 2,
+								WebkitBoxOrient: "vertical",
+								overflow: "hidden",
+								textOverflow: "ellipsis",
 							}}
 						>
 							{media.description}
