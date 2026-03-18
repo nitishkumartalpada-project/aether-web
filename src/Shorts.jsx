@@ -610,7 +610,7 @@ export default function Shorts() {
                 ::-webkit-scrollbar { width: 0px; background: transparent; }
                 
                 .short-container {
-                    height: 100vh;
+                    height: 100dvh;
                     width: 100vw;
                     scroll-snap-align: start;
                     display: flex;
@@ -702,6 +702,14 @@ export default function Shorts() {
                         top: 70px;
                     }
                 }
+				
+				.shorts-description {
+    				display: -webkit-box;
+    				-webkit-line-clamp: 2;
+    				-webkit-box-orient: vertical;
+    				overflow: hidden;
+    				text-overflow: ellipsis;
+				}
             `}
 			</style>
 
