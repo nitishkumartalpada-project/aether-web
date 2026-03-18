@@ -48,7 +48,7 @@ export default function Admin() {
 	const fetchAdminData = async () => {
 		try {
 			const res = await axios.get(
-				`${import.meta.env.VITE_API_URL}/api/admin/auth`,
+				`${import.meta.env.VITE_API_URL}/api/admin/media`,
 			);
 			setMediaList(res.data);
 			setLoading(false);
@@ -300,7 +300,7 @@ export default function Admin() {
 						</tr>
 					</thead>
 					<tbody>
-						{mediaList.map((media) => (
+						{mediaList?.map((media) => (
 							<React.Fragment key={media._id}>
 								<tr style={{ borderBottom: "1px solid #222" }}>
 									<td
