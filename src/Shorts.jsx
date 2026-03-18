@@ -314,7 +314,9 @@ const ShortVideo = ({ media }) => {
 						>
 							{media.title}
 						</h2>
+						{/* FIX A: Added className="shorts-description" here */}
 						<p
+							className="shorts-description"
 							style={{
 								margin: "0 0 12px 0",
 								fontSize: "0.9rem",
@@ -595,7 +597,8 @@ export default function Shorts() {
 	return (
 		<div
 			style={{
-				height: "100vh",
+				/* FIX B: Changed 100vh to 100dvh for mobile address bar correction */
+				height: "100dvh",
 				width: "100vw",
 				overflowY: "scroll",
 				scrollSnapType: "y mandatory",
@@ -681,8 +684,8 @@ export default function Shorts() {
                     .short-actions { position: absolute; right: 15px; bottom: 35px; z-index: 10; }
                     .action-icon-bg { background-color: transparent; padding: 0; }
                 }
-				
-				.shorts-quality-gear {
+                
+                .shorts-quality-gear {
                     position: absolute;
                     top: 15px;
                     right: 15px;
@@ -702,14 +705,14 @@ export default function Shorts() {
                         top: 70px;
                     }
                 }
-				
-				.shorts-description {
-    				display: -webkit-box;
-    				-webkit-line-clamp: 2;
-    				-webkit-box-orient: vertical;
-    				overflow: hidden;
-    				text-overflow: ellipsis;
-				}
+                
+                .shorts-description {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             `}
 			</style>
 
